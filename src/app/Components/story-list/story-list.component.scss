@@ -1,0 +1,11 @@
+.list-group-item {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f0f0f0;
+  }
+  .list-group-item:has(.no-link){
+    cursor: default;
+  }

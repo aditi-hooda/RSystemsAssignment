@@ -1,0 +1,10 @@
+  <nav class="navbar navbar-light bg-light mb-5 p-3">
+  <div class="container-fluid">
+    <h1>Hacker News App</h1>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search stories..." name="searchInput" aria-label="Search stories" [(ngModel)]="query"
+      (keydown.enter)="search()">
+      <button class="btn btn-outline-success" type="button" (click)="search()">Search</button>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,37 @@
+<app-search-box (searchEvent)="search($event)"></app-search-box>
+
+<div class="container">
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (nextPageEvent)="nextPage()"
+    (prevPageEvent)="prevPage()"
+  >
+  </app-pagination>
+
+  <div *ngIf="stories && stories.length > 0">
+    <div class="card w-100" style="width: 18rem">
+      <div class="card-header">Stories</div>
+      <ul class="list-group list-group-flush">
+        <div *ngFor="let story of stories">
+          <li class="list-group-item">
+            <blockquote class="blockquote m-2">
+              <h3>{{ story.title }}</h3>
+              <footer class="blockquote-footer mt-3">
+                Posted By <cite title="{{ story.by}}">{{ story.by}}</cite>
+                on <cite title="{{ story.postedOn}}">{{ story.postedOn}}</cite>
+              </footer>
+              <p *ngIf="story.url">
+                <a href="{{ story.url }}" target="_blank">Read more</a>
+              </p>
+              <p *ngIf="!story.url" class="no-link">No link available</p>
+            </blockquote>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="!stories || stories.length === 0">
+    <p>No stories found.</p>
+  </div>
+</div>
