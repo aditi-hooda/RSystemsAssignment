@@ -9,7 +9,7 @@ import { StoryService } from '../../Services/story/story.service';
 export class StoryListComponent implements OnInit {
   stories: any[] = [];
   currentPage = 1;
-  totalPages = 30; // Placeholder, update this based on API response
+  totalPages = 30;
 
   constructor(private storyService: StoryService) { }
 
@@ -39,7 +39,7 @@ export class StoryListComponent implements OnInit {
         }
       );
     } else {
-      this.getNewestStories(this.currentPage); // Fetch all stories if query is empty
+      this.getNewestStories(this.currentPage);
     }
   }
 
