@@ -7,7 +7,7 @@ import { LoadingIndicatorService } from './../loading-indicator/loading-indicato
   providedIn: 'root'
 })
 export class StoryService {
-  private apiUrl = 'https://localhost:7002/api/Stories'; // Replace with your API URL
+  private apiUrl = 'https://localhost:7002/api/Stories';
 
   constructor(private http: HttpClient, private loadingIndicatorService: LoadingIndicatorService) { }
 
